@@ -1,0 +1,11 @@
+<h1>String Calculator</h1>
+
+<%= form_with url: calculate_path, method: :post, data: { turbo_frame: "result" } do %>
+  <%= label_tag :numbers, "Enter numbers:" %>
+  <%= text_field_tag :numbers %>
+  <%= submit_tag "Calculate" %>
+<% end %>
+
+<turbo-frame id="result">
+  <%= render partial: "calculator/result", locals: { result: nil } %>
+</turbo-frame>
