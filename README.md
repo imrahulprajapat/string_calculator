@@ -1,6 +1,8 @@
 # String Calculator - TDD Kata
 
 This is an implementation of the String Calculator kata, built using Test-Driven Development (TDD). The kata involves creating a calculator that can sum numbers represented as strings with various delimiters and handle edge cases such as negative numbers.
+![image](https://github.com/user-attachments/assets/5224fc5b-364a-46fd-a95e-6b29b35168df)
+
 
 ## Features:
 
