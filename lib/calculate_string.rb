@@ -4,6 +4,7 @@ class CalculateString
 
     if custom_delimiter?(numbers)
       delimiter, numbers = extract_delimiter_and_numbers(numbers)
+      return delimiter if numbers.nil? && !delimiter.is_a?(Array)
       return sum_of_numbers(numbers, delimiter)
     end
 
@@ -21,8 +22,10 @@ class CalculateString
 
   def extract_delimiter_and_numbers(numbers)
     delimiter_end = numbers.index("\n")
-    delimiter = numbers[delimiter_end-1..delimiter_end-1]
-    numbers = numbers[delimiter_end + 1..-1]
+    return "Invalid format: missing newline after delimiter" unless delimiter_end
+
+    delimiter = numbers[2...delimiter_end]
+    numbers = numbers[(delimiter_end + 1)..]
     [delimiter, numbers]
   end
 
